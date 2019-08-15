@@ -6,7 +6,7 @@ module.exports = {
         return this.getRandomInt(1, 10);
     },
     getApiHost: function() {
-        // return 'https://mydefinition-api.herokuapp.com';
+        return 'https://mydefinition-api.herokuapp.com';
         if (process.env.API_HOST_URL) {
             return process.env.API_HOST_URL;
         }
