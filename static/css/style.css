@@ -1,0 +1,328 @@
+body {
+    font-size: 13px;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 0;
+    margin: 0;
+    color: #555;
+}
+
+a, a:link, a:hover, a:visited {
+    text-decoration: none;
+    color: #555;
+}
+
+header {
+    padding: 5px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #464159;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    box-sizing: border-box;
+    z-index: 99;
+}
+
+header h1 {
+    font-size: 22px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+#main-navigation {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    font-size: 24px;
+    height: 50px;
+}
+
+#main-navigation li {
+    list-style-type: none;
+    flex: 1;
+}
+
+#main-navigation li.btn-create {
+    transform: translateY(-30px);
+    background-color: #c7f0db;
+    flex: 0 1 65px;
+    height: 65px;
+    box-sizing: border-box;
+    display: block;
+    border-radius: 100%;
+    border: 4px solid #f9f9f9;
+}
+
+#main-navigation li a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    opacity: 0.6;
+}
+
+#main-navigation li.btn-create a,
+#main-navigation li.active a {
+    opacity: 1;
+}
+
+#main-navigation li.btn-create a {
+    padding: 0;
+    line-height: 60px;
+    vertical-align: middle;
+}
+
+.btn {
+    background-color: #c7f0db;
+    border: 0;
+    padding: 20px 40px;
+    border-radius: 4px;
+    min-width: 100px;
+    color: #464159;
+    font-size: 16px;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+}
+
+.loading {
+    font-size: 50px;
+    color: #fff;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.alert {
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 5px;
+    color: #fff;
+}
+
+.container {
+    flex: 1 0 auto;
+    position: relative;
+}
+
+.container > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 80px 10px;
+    padding-bottom: 40px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.container .word-group {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.container .word-group .word-group-footer {
+    margin-top: 20px;
+    padding: 10px 0;
+}
+
+.container .word-container {
+    text-align: center;
+    margin: 20px 0;
+    padding: 20px 0;
+    color: #fff;
+    font-size: 40px;
+    text-shadow: 1px 1px 2px #666;
+    text-transform: uppercase;
+}
+
+.container .word-container input {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.2);
+    font-size: 30px;
+    padding: 5px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.container .word-definition {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 18px;
+    min-height: 200px;
+    position: relative;
+    overflow: auto;
+}
+
+.container .word-definition .content {
+    opacity: 1;
+    padding: 0;
+    margin: 0;
+    transform: scale(1);
+    line-height: 28px;
+    /* transition-delay: 300ms; */
+}
+
+.container .word-definition.with-cover .content {
+    transform: scale(0);
+    opacity: 0;
+    /* transition-delay: 0; */
+}
+
+.container .word-definition:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    content: "Uncover me!";
+    opacity: 0;
+    pointer-events: none;
+    /* transition-delay: 0; */
+}
+
+.container .word-definition.with-cover:after {
+    opacity: 1;
+
+    /* transition-delay: 500ms; */
+}
+
+.container .word-definition textarea {
+    font-size: 18px;
+    border: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 5px;
+    background-color: transparent;
+    width: 100%;
+}
+
+.container .vote {
+    margin-top: 40px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .vote > div {
+    font-size: 50px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+.container .vote > div.thumbsup {
+    color: #1fb845;
+}
+.container .vote > div.thumbsdown {
+    color: #c4214a;
+}
+
+.container ul.definition-items {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    color: #fff;
+}
+
+.container ul.definition-items li {
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.container ul.definition-items li:last-child {
+    border-bottom: 0;
+}
+
+.bg-1 {
+    background: #ff9966;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #ff5e62, #ff9966);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #ff5e62, #ff9966); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */        
+}
+
+.bg-2 {
+    background: #DCE35B;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #45B649, #DCE35B);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #45B649, #DCE35B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */        
+}
+
+.bg-3 {
+    background: #ff4b1f;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ff9068, #ff4b1f);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ff9068, #ff4b1f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */        
+}
+
+.bg-4 {
+    background: #834d9b;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #d04ed6, #834d9b);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #d04ed6, #834d9b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.bg-5 {
+    background: #FEAC5E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */        
+}
+
+.bg-6 {
+    background: #009FFF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #ec2F4B, #009FFF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #ec2F4B, #009FFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+}
+
+.bg-7 {
+    background: #00F260;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #0575E6, #00F260); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+}
+
+.bg-8 {
+    background: #fc00ff;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #00dbde, #fc00ff);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #00dbde, #fc00ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+}
+
+.bg-9 {
+    background: #FFE000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #799F0C, #FFE000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #799F0C, #FFE000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+}
+
+.bg-10 {
+    background: #e65c00;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #F9D423, #e65c00);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #F9D423, #e65c00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+}
