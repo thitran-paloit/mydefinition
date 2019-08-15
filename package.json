@@ -9,7 +9,7 @@
     "start": "next start",
     "prod": "next export",
     "prod_start": "node server.js",
-    "test": "jest",
+    "test": "jest --verbose",
     "test:watch": "jest --watch"
   },
   "keywords": [],
