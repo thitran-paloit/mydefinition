@@ -9,6 +9,6 @@ module.exports = {
         if (process.env.API_HOST_URL) {
             return process.env.API_HOST_URL;
         }
-        return `${window.location.protocol}//${window.location.hostname}`
+        return `${window.location.protocol}//${window.location.hostname}:8000`
     }
 }

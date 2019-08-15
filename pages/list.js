@@ -19,7 +19,7 @@ class List extends React.Component {
     }
 
     async componentDidMount() {
-        const response = await fetch(lib.getApiHost() + ':8000/api/definition');
+        const response = await fetch(lib.getApiHost() + '/api/definition');
         const definitions = await response.json();
 
         this.setState({

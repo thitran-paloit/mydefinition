@@ -32,7 +32,7 @@ class Create extends React.Component {
             error: false,
         });
 
-        await fetch(lib.getApiHost() + ':8000/api/definition', {
+        await fetch(lib.getApiHost() + '/api/definition', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

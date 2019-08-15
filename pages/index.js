@@ -33,7 +33,7 @@ class Home extends React.Component {
         //     })
         // }, 1000);
 
-        const response = await fetch(lib.getApiHost() + ':8000/api/definition/request');
+        const response = await fetch(lib.getApiHost() + '/api/definition/request');
         const definitions = await response.json();
         this.setState({
             items: _.shuffle(definitions).map(defaulItem => {
@@ -52,7 +52,7 @@ class Home extends React.Component {
     }
 
     hitCounter = async (id) => {
-        await fetch(lib.getApiHost() + ':8000/api/definition/' + id + '/hit', {
+        await fetch(lib.getApiHost() + '/api/definition/' + id + '/hit', {
             method: 'PUT'
         });
     }
