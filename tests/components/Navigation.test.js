@@ -5,6 +5,6 @@ describe("Navigation", () => {
     it('should render #main-navigation', () => {
         const wrapper = mount(<Navigation />);
 
-        expect(wrapper.find('#main-navigation')).toHaveLength(0);
+        expect(wrapper.find('#main-navigation')).toHaveLength(1);
     });
 })
