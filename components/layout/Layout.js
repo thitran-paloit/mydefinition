@@ -4,12 +4,14 @@ import Header from './Header';
 import Navigation from './Navigation';
 
 export default function Layout (props) {
+    const title = props.title || 'MyDefinition'
     return (
         <div className="wrapper">
             <Head>
                 <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&display=swap" rel="stylesheet" />
                 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet" />
                 <link href="/static/css/style.css" rel="stylesheet" />
+                <title>{title}</title>
             </Head>
 
             <Header />
